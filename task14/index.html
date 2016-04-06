@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 14</title>
+</head>
+
+<body>
+    <h3>污染城市列表</h3>
+    <ul id="aqi-list">
+        <!--   
+    <li>第一名：福州（样例），10</li>
+  	<li>第二名：福州（样例），10</li> -->
+    </ul>
+    <script type="text/javascript">
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+
+    (function() {
+
+        /*
+        在注释下方编写代码
+        遍历读取aqiData中各个城市的数据
+        将空气质量指数大于60的城市显示到aqi-list的列表中
+        */
+
+
+        var arr_number = aqiData.length;
+        var aql_list_id = document.getElementById("aqi-list");
+
+        for (var i = 0; i < arr_number; i++) {
+            //寻找指数大于60的城市
+            if (aqiData[i][1] > 60) {
+                //找到符合的数据就创建节点，插入到ul中
+                var li = createLi(aqiData[i][0], aqiData[i][1]);
+                //将li插入到ul中
+                aql_list_id.appendChild(li);
+            }
+
+        }
+
+        function createLi(cityName, score) {
+            //创建li节点
+            var li = document.createElement("li");
+            li.innerHTML = cityName + "," + score;
+            return li;
+        }
+
+    })();
+
+
+    //尽量避免循环内appendChild…重绘会引起性能下降，对DOM的操作要越少越好。具体如何实现？
+    </script>
+</body>
+
+</html>
