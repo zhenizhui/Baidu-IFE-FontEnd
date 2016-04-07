@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+body {
+    padding: 20px;
+    font: 14px "lucida grande", "lucida sans unicode", lucida, "Helvetica Neue", helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.container {
+    padding: 20px;
+    margin: 20px;
+    background-color: #eee;
+    overflow: auto;
+    min-width: 1100px;
+}
+
+.teamName {
+    border: 1px solid #999;
+    padding: 20px;
+    width: 158px;
+    float: left;
+}
+
+.teamName img {
+    width: 80px;
+    height: 80px;
+}
+
+.mainContent {
+    padding: 20px;
+    background-color: #fff;
+    margin-left: 250px;
+    margin-right: 200px;
+    
+}
+
+.mainContent:after{
+	content: "";
+    display: block;
+    clear: both;
+}
+
+.personDetail {
+    width: 120px;
+    float: right;
+}
+
+
+/*
+下面是position的布局方式
+
+*/
+

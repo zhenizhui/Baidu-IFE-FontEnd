@@ -42,7 +42,7 @@
 
         var ul = document.getElementById("source");
         var childArr = ul.children || ul.childNodes;
-        var data = new Array(); //  临时数组，用来存储符合条件的节点
+        var data = new Array(); //  临时数组，用来存储符合条件的字符串
         var city, quality;
         var len = childArr.length;
 
@@ -92,7 +92,7 @@
         }
 
     }
-    
+
     function btnHandle() {
         var aqiData = getData();
         aqiData = sortAqiData(aqiData);
