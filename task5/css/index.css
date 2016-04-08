@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:link {
+    
+}
+
+a:visited {}
+
+a:hover {
+    color: #56ABE4;
+}
+
+a:active {}
+
+body {
+
+    font-size: 14px;
+    background-color: #E8E5E5;
+    font-family: 'Microsoft YaHei';
+}
+
+.main-content {
+    margin-right: 500px;
+}
+
+.main-content:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+header {
+    color: #fff;
+    background-color: #312E2E;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+header .container {
+    margin: 0 30px;
+    position: relative;
+}
+
+.logo {
+    display: block;
+    height: 64px;
+    width: 64px;
+}
+
+header ul {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -9px;
+}
+
+header ul li {
+    margin-left: 10px;
+    display: inline;
+}
+
+article {
+    background-color: #fff;
+    margin: 30px;
+    padding: 30px;
+    box-shadow: 0 6px 5px 0 rgba(34, 36, 38, .15);
+    border-radius: 5px;
+    overflow: auto;
+}
+
+
+
+figure {
+    width: 114px;
+    height: 130px;
+    border: 1px solid #E2DCDC;
+    font-size: 12px;
+    margin: 15px;
+    text-align: center;
+    padding: 12px; 
+    float: left;
+}
+
+figure img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.last-article h2 {
+    color: #928C8C;
+}
+
+.last-article h3 {
+    color: #D2D2D2;
+}
+
+.last-article ol {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.last-article table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    /*单一单元格*/
+}
+
+tr,
+td {
+    border: 1px solid #ccc;
+}
+
+td a {
+    color: #552592;
+}
+
+.last-article table tr th {
+    background-color: #000;
+    color: #fff;
+}
+
+aside {
+    background-color: #fff;
+    margin: 30px;
+    padding: 30px;
+    box-shadow: 0 6px 5px 0 rgba(34, 36, 38, .15);
+    border-radius: 5px;
+    width: 400px;
+    float: right;
+}
+
+.my-info {}
+
+.help {
+    margin-top: 23px;
+    margin-left: 166px;
+    display: block;
+}
+
+.my-info h2 {
+    border-left: 3px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.my-info div {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.my-info div .tips {
+    width: 40%;
+    float: left;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.my-info div textarea {
+    width: 40%;
+    height: 74px;
+}
+
+.submitBtn {
+    width: 100%;
+    background-color: #3355D0;
+    height: 50px;
+    display: block;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    line-height: 60px;
+}

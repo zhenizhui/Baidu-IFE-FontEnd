@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    font-size: 14px;
+    color: #000;
+    background-color: #eee;
+    font-family: 'Microsoft YaHei';
+}
+
+.container {
+    width: 900px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.head-area {
+    height: 60px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #484040;
+    position: relative;
+}
+
+.head-area .index {
+    display: block;
+    background-color: #DA6F6F;
+    height: 60px;
+    width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.head-area .index span {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+}
+
+.head-area .date {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #DA6F6F;
+}
+
+.introduce {}
+
+.introduce .pic {
+    position: relative;
+    width: 641px;
+}
+
+
+/*使用伪类来设置透明的色块 start*/
+
+.introduce .pic:before {
+    position: absolute;
+    content: "";
+    background-color: #008000;
+    width: 191px;
+    height: 301px;
+    opacity: 0.3;
+}
+
+.introduce .pic:after {
+    position: absolute;
+    content: "";
+    background-color: #FF0000;
+    width: 191px;
+    height: 301px;
+    right: 0;
+    top: 0;
+    opacity: 0.3;
+}
+
+
+/*使用伪类来设置透明的色块 end*/
+
+.about-technologe {
+    border-top: 3px solid #cc8091;
+    width: 200px;
+    height: 305px;
+    background-color: #fff;
+    float: right;
+    position: relative;
+}
+
+.about-technologe .intr-title {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    font-family: 微软雅黑;
+    line-height: 40px;
+    text-decoration: underline;
+    font-variant: small-caps;
+    /*小型的大写字母字体*/
+    text-transform: capitalize;
+    /*将每个单词的第一个字母转换成大写 */
+}
+
+.about-technologe .small-intro {
+    /*About technology */
+    font-style: oblique;
+    /*指定文本字体样式为倾斜的字体。人为的使文字倾斜，而不是去选取字体中的斜体字*/
+    font-size: 12px;
+    color: rgb(103, 103, 103);
+    font-family: 楷体;
+    line-height: 10px;
+}
+
+.about-technologe .seven-hundred {
+    /*700*/
+    font-size: 94px;
+    font-style: oblique;
+    color: #60BD60;
+}
+
+.about-technologe .three-two {
+    font-size: 63px;
+    color: #CC8091;
+}
+
+.about-technologe .css {
+    position: absolute;
+    font-size: 20px;
+    color: #CC8091;
+    bottom: 20px;
+    left: 84px;
+}
+
+.about-technologe .csssc {
+    position: absolute;
+    color: #ccc;
+    bottom: 10px;
+    left: 85px;
+}
+
+.wwh {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
+.wwh div {
+    float: left;
+    margin-right: 35px;
+    line-height: 28.2px;
+    width: 221px;
+}
+
+.wwh .title {
+    text-transform: capitalize;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.wwh .what .title {
+    border-bottom: 1px solid #008000;
+    color: #008000;
+}
+
+.wwh .when .title {
+    border-bottom: 1px solid #EC9522;
+    color: #EC9522;
+}
+
+.wwh .how {
+    width: 138px;
+}
+
+.wwh .how .title {
+    border-bottom: 1px solid #CE7B84;
+    color: #CE7B84;
+}
+
+.wwh .how .percent {
+    color: #E5A9A8;
+    font-style: oblique;
+}
+
+
+/*第三部分*/
+
+.left-area {
+    font-size: 20px;
+    clear: left;
+    width: 440px;
+}
+
+.left-area .title {
+    color: #11456B;
+    border-bottom: 2px solid #11456b;
+    padding-bottom: 10px;
+    font-family: "SimHei";
+    font-size: 43px;
+    margin-bottom: 20px;
+}
+
+.left-area .title .the {
+    color: #F5E327;
+    font-size: 60px;
+    font-style: oblique;
+    margin-right: 10px;
+}
+
+.left-area .passage {
+    font-size: 15px;
+}
+
+.left-area .passage img {
+    float: right;
+    margin: 6px 0 20px 10px;
+}
+
+.right-area {
+    float: right;
+    width: 458px;
+}
+
+.right-area .right-area-top {
+    margin-left: 20px;
+    position: relative;
+    height: 260px;
+}
+
+.right-area .right-area-top .fe-tech-outer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.4;
+    padding: 5px 0 5px 30px;
+    width: 407px;
+}
+
+.right-area .right-area-top .fe-tech-outer .fe-tech-small {
+    font-size: 15px;
+    font-style: oblique;
+    margin-left: 10px;
+}
+
+.right-area-top .fe-tech {
+    border-left: 3px solid green;
+    height: 40px;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 26px
+}
+
+.right-area-bottom {
+    background-color: #eeeed6;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.right-area-bottom .passage-link {
+    padding: 20px;
+    font-size: 16px;
+}
+
+.right-area-bottom .passage-link .passage-link-p {
+    padding: 10px 0 10px 20px;
+    position: relative;
+}
+
+.right-area-bottom .passage-link .passage-link-p:before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-left: 6px solid #eeeed6;
+    border-right: 6px solid #eeeed6;
+    border-bottom: 10px solid #11456C;
+    top: 16px;
+    left: 0;
+}
+
+.fe {
+    font-style: oblique;
+    font-size: 14px;
+}
+
+.right-left-bottom {
+    overflow: auto;
+    background-color: #d45d5c;
+    width: 231px;
+}
+
+.zero {
+    float: left;
+    font-size: 110px;
+    color: #fff;
+    font-family: "微软雅黑";
+    border-right: 2px solid #fff;
+    height: 82px;
+    line-height: 86px;
+    margin: 37px 10px;
+}
+
+.nums {
+    margin-top: 37px;
+    font-style: oblique;
+}
+
+.nums,
+.hello {
+    color: #fff;
+}
+
+.hello {
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.quote {
+    position: absolute;
+    bottom: 0px;
+    right: 24px;
+    width: 138px;
+    height: 130px;
+}
+
+.quotes {
+    font-size: 72px;
+    color: #d45d5c;
+    font-family: "黑体";
+}
+
+.quotes-top {
+    position: absolute;
+    top: -38px;
+    left: -69px;
+}
+
+.quotes-bottom {
+    position: absolute;
+    top: 61px;
+    right: -35px;
+}
+
+footer{
+	margin-top: 34px;
+	border-top: 2px solid #ccc;
+}
+
+footer p{
+	float: right;
+	height: 30px;
+	background-color: #fff;
+	color: #d45d5c;
+	font-size: 12px;
+}
