@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task18</title>
+    <style>
+    .number-box {
+        margin-top: 20px;
+        width: 1000px;
+        height: 50px;
+    }
+    
+    .number {
+        height: 50px;
+        margin-right: 8px;
+        background-color: red;
+        color: #fff;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+            min-width: 50px;
+    padding: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="data">
+    <button id="left-insert">左侧入</button>
+    <button id="right-insert">右侧入</button>
+    <button id="left-out">左侧出</button>
+    <button id="right-out">右侧出</button>
+    <div class="number-box" id="number-box">
+    </div>
+    <script type="text/javascript">
+    var queue = new Array();
+    var number = document.getElementsByClassName("number");
+    var number_box = document.getElementById("number-box");
+    var input_data = document.getElementById("data");
+    var left_insert_btn = document.getElementById("left-insert");
+    var right_insert_btn = document.getElementById("right-insert");
+    var left_out_btn = document.getElementById("left-out");
+    var right_out_btn = document.getElementById("right-out");
+
+
+    //队列的长度不是固定不变的，每出队一个，长度减少一
+
+    function validate(str) {
+        if (str.trim() == null) {
+            alert("wrong data");
+            return;
+        }
+        if (!str.trim().match(/^\d+(\.\d+)?$/)) {
+            alert("only number");
+            return;
+        }
+        return str;
+    }
+
+    function newElement(data) {
+        //创建新元素并赋值   
+        var _div = document.createElement("div");
+        _div.className = "number";
+        _div.innerHTML = data;
+        _div.addEventListener("click", function() {
+            number_box.removeChild(this);
+        });
+        return _div;
+    }
+
+    function addEventListener() {
+        left_insert_btn.addEventListener("click", function() {
+            //1. 数据校验
+            var data = validate(input_data.value);
+            //2. 数据进入队列
+            queue.unshift(data);
+            console.log(queue);
+            //3. 创建元素插入到指定的div中
+            number_box.insertBefore(newElement(data), number_box.firstChild);
+        });
+
+        right_insert_btn.addEventListener("click", function() {
+            //1. 数据校验
+            var data = validate(input_data.value);
+            //2. 数据进入队列
+            queue.push(data);
+            console.log(queue);
+            //3. 创建元素插入到指定的div中
+            number_box.appendChild(newElement(data));
+        });
+
+        left_out_btn.addEventListener("click", function() {
+
+            //1. 从左边删除数据
+            queue.shift(data);
+
+            //2. 删除视图
+            var number_box = document.getElementById("number-box");
+            number_box.removeChild(number_box.firstChild);
+            console.log("左边删除后："+queue);
+        });
+
+        right_out_btn.addEventListener("click", function() {
+
+            //1. 从左边删除数据
+            queue.pop(data);
+
+            //2. 删除视图
+            var number_box = document.getElementById("number-box");
+            number_box.removeChild(number_box.lastChild);
+            console.log("右边删除后："+queue);
+        });
+    }
+    addEventListener();
+    </script>
+</body>
+
+</html>
