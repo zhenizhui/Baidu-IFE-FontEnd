@@ -7,17 +7,19 @@
     <style>
     .number-box {
         margin-top: 20px;
-        width: 3000px;
     }
     
     .number {
-        min-height: 20px;
         margin-right: 8px;
         background-color: red;
-        color: #fff;
+        color: #000;
         float: left;
         text-align: center;
         min-width: 25px;
+        transition: height 2s;
+        -moz-transition: height 2s;
+        -webkit-transition: height 2s;
+        -o-transition: height 2s;
     }
     </style>
 </head>
@@ -29,145 +31,8 @@
     <button id="left-out">左侧出</button>
     <button id="right-out">右侧出</button>
     <button id="sort">排序</button>
-    <div class="number-box" id="number-box">
-    </div>
-    <script type="text/javascript">
-    var queue = new Array();
-    var number = document.getElementsByClassName("number");
-    var number_box = document.getElementById("number-box");
-    var input_data = document.getElementById("data");
-    var left_insert_btn = document.getElementById("left-insert");
-    var right_insert_btn = document.getElementById("right-insert");
-    var left_out_btn = document.getElementById("left-out");
-    var right_out_btn = document.getElementById("right-out");
-
-    number_box.innerHTML = "";
-
-
-    //队列的长度不是固定不变的，每出队一个，长度减少一
-    var str = "";
-
-    function addData() {
-        for (var i = 0; i < 50; i++) {
-            var num = validate(Math.ceil(Math.random() * 100));
-            if (num) {
-                queue[i] = num;
-                if (queue.length <= 50) {
-                    str += "<div class='number' style='height:" + num + "px'" + ">" + num + "</div>";
-                }
-
-            }
-
-        }
-        console.log(queue.length);
-    }
-
-    function paint() {
-        number_box.innerHTML = str;
-    }
-
-    function validate(num) {
-        if (queue.length >= 60) {
-            alert("queue'length is over 60!");
-            return false;
-        }
-
-        if (num >= 10 && num <= 100) {
-            return num;
-        } else {
-            //alert("data must be in 10~100");
-            return false;
-        }
-    }
-
-    function newElement(data) {
-        //创建新元素并赋值   
-        var _div = document.createElement("div");
-        _div.className = "number";
-        _div.innerHTML = data;
-        _div.style.height = data + 'px';
-        _div.addEventListener("click", function() {
-            number_box.removeChild(this);
-            //删除页面元素的时候要同步queue队列
-            for (var q = 0; q < queue.length; q++) {
-                if (queue[q] == this.innerHTML.trim()) {
-                    queue.splice(q, 1);
-                    console.log("点击div后删除,当前队列：" + queue);
-                }
-            }
-        });
-        return _div;
-    }
-
-    function addEventListener() {
-        left_insert_btn.addEventListener("click", left_insert);
-
-        right_insert_btn.addEventListener("click", right_insert);
-
-        left_out_btn.addEventListener("click", left_out);
-
-        right_out_btn.addEventListener("click", right_out);
-    }
-
-    function left_insert() {
-        //1. 数据校验
-        var data = validate(input_data.value);
-        if (data) {
-            //2. 数据进入队列
-            queue.unshift(data);
-            console.log(queue);
-            //3. 创建元素插入到指定的div中
-            number_box.insertBefore(newElement(data), number_box.firstChild);
-        }
-    }
-
-    function right_insert() {
-        //1. 数据校验
-        var data = validate(input_data.value);
-        if (data) {
-            //2. 数据进入队列
-            queue.push(data);
-            console.log(queue);
-            //3. 创建元素插入到指定的div中
-            number_box.appendChild(newElement(data));
-        }
-    }
-
-    function left_out() {
-        if (queue.length <= 0) {
-            alert("no data to delete");
-        } else {
-            //1. 从左边删除数据
-            var testdata = queue.shift();
-            console.log("删除的数据" + testdata);
-            //2. 删除视图
-            var number_box = document.getElementById("number-box");
-            number_box.removeChild(number_box.firstChild);
-            console.log("左边删除后：" + queue);
-        }
-    }
-
-    function right_out() {
-        if (queue.length <= 0) {
-            alert("no data to delete");
-        } else {
-            //1. 从右边删除数据
-            var testdata = queue.pop();
-            console.log("删除的数据" + testdata);
-            //2. 删除视图
-            var number_box = document.getElementById("number-box");
-
-            number_box.removeChild(number_box.lastChild);
-
-            console.log("右边删除后：" + queue);
-        }
-    }
-
-
-    addData();
-    paint();
-    addEventListener();
-    </script>
+    <div class="number-box" id="number-box"></div>
+    <script src="js/task19.js"></script>
 </body>
 
 </html>

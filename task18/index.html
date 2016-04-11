@@ -32,6 +32,7 @@
     <button id="left-out">左侧出</button>
     <button id="right-out">右侧出</button>
     <div class="number-box" id="number-box">
+
     </div>
     <script type="text/javascript">
     var queue = new Array();
@@ -43,7 +44,7 @@
     var left_out_btn = document.getElementById("left-out");
     var right_out_btn = document.getElementById("right-out");
 
-    number_box.innerHTML = "";
+    number_box.innerHTML = "";//防止有文本节点
 
 
     //队列的长度不是固定不变的，每出队一个，长度减少一
