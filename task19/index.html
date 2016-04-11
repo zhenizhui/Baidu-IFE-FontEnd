@@ -3,24 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>task18</title>
+    <title>task19</title>
     <style>
     .number-box {
         margin-top: 20px;
-        width: 1000px;
-        height: 50px;
+        width: 3000px;
     }
     
     .number {
-        height: 50px;
+        min-height: 20px;
         margin-right: 8px;
         background-color: red;
         color: #fff;
         float: left;
         text-align: center;
-        line-height: 50px;
-        min-width: 50px;
-        padding: 10px;
+        min-width: 25px;
     }
     </style>
 </head>
@@ -31,6 +28,7 @@
     <button id="right-insert">右侧入</button>
     <button id="left-out">左侧出</button>
     <button id="right-out">右侧出</button>
+    <button id="sort">排序</button>
     <div class="number-box" id="number-box">
     </div>
     <script type="text/javascript">
@@ -47,17 +45,39 @@
 
 
     //队列的长度不是固定不变的，每出队一个，长度减少一
+    var str = "";
+
+    function addData() {
+        for (var i = 0; i < 50; i++) {
+            var num = validate(Math.ceil(Math.random() * 100));
+            if (num) {
+                queue[i] = num;
+                if (queue.length <= 50) {
+                    str += "<div class='number' style='height:" + num + "px'" + ">" + num + "</div>";
+                }
+
+            }
+
+        }
+        console.log(queue.length);
+    }
+
+    function paint() {
+        number_box.innerHTML = str;
+    }
 
     function validate(num) {
-        if (num.trim() == "") {
-            alert("wrong data");
+        if (queue.length >= 60) {
+            alert("queue'length is over 60!");
             return false;
         }
-        if (!num.trim().match(/^\d+(\.\d+)?$/)) {
-            alert("only number");
+
+        if (num >= 10 && num <= 100) {
+            return num;
+        } else {
+            //alert("data must be in 10~100");
             return false;
         }
-        return num;
     }
 
     function newElement(data) {
@@ -65,13 +85,14 @@
         var _div = document.createElement("div");
         _div.className = "number";
         _div.innerHTML = data;
+        _div.style.height = data + 'px';
         _div.addEventListener("click", function() {
             number_box.removeChild(this);
             //删除页面元素的时候要同步queue队列
-            for(var q=0;q<queue.length;q++){
-                if (queue[q] == this.innerHTML.trim()){
-                    queue.splice(q,1);                  
-                    console.log("点击div后删除,当前队列："+queue);
+            for (var q = 0; q < queue.length; q++) {
+                if (queue[q] == this.innerHTML.trim()) {
+                    queue.splice(q, 1);
+                    console.log("点击div后删除,当前队列：" + queue);
                 }
             }
         });
@@ -141,6 +162,10 @@
             console.log("右边删除后：" + queue);
         }
     }
+
+
+    addData();
+    paint();
     addEventListener();
     </script>
 </body>
