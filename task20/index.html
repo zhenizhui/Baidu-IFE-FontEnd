@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task20</title>
+    <style>
+    .number-box {
+        margin-top: 20px;
+    }
+    
+    .number {
+        margin-right: 8px;
+        background-color: red;
+        color: #000;
+        float: left;
+        text-align: center;
+        min-width: 25px;
+        transition: height 2s;
+        -moz-transition: height 2s;
+        -webkit-transition: height 2s;
+        -o-transition: height 2s;
+    }
+
+    .active{
+        color: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <textarea id="data" cols="30" rows="10" placeholder="输入多个数据的时候请用英文逗号隔开"></textarea>
+    <button id="left-insert">左侧入</button>
+    <button id="right-insert">右侧入</button>
+    <button id="left-out">左侧出</button>
+    <button id="right-out">右侧出</button>
+    <button id="sort">排序</button>
+    <button id="search">查询</button>
+    <input type="text" id="search-key" placeholder="查找关键字..."></input>
+    <div class="number-box" id="number-box"></div>
+    <script src="js/task20.js"></script>
+</body>
+
+</html>
