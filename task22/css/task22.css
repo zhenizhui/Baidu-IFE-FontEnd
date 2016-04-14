@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+div{
+  border:1px solid #000;
+  margin: 10px;
+  padding: 10px;
+}
+
+.root{
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.son{
+  flex-grow: 1;
+  display: inline-flex;
+}
+
+.son-2{
+  flex-grow: 1;
+  display: inline-flex;
+}
+
+.son-3{
+  flex-grow: 1
+}
+
+#pre-order{
+  margin-left: 100px;
+}
