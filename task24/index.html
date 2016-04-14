@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>task24</title>
+  <link rel="stylesheet" href="css/task24.css">
+</head>
+
+<body>
+  <div class="root" id="root">A
+    <div class="son" id="B">B
+      <div class="son-2" id="C">C
+        <div class="son-3" id="D">D
+          <div class="son-3" id="E">E</div>
+        </div>
+        <div class="son-3" id="F">F
+          <div class="son-3" id="G">G</div>
+          <div class="son-3" id="H">H</div>
+        </div>
+      </div>
+      <div class="son-2" id="I">I
+        <div class="son-3" id="J">J</div>
+        <div class="son-3" id="K">K</div>
+      </div>
+    </div>
+    <div class="son" id="L">L
+      <div class="son-2" id="M">M
+        <div class="son-3" id="N">N
+          <div class="son-3" id="O">O</div>
+          <div class="son-3" id="P">P</div>
+        </div>
+        <div class="son-3" id="Q">Q</div>
+      </div>
+      <div class="son-2" id="R">R
+        <div class="son-3" id="S">S
+          <div class="son-3" id="T">T</div>
+        </div>
+        <div class="son-3" id="U">U</div>
+      </div>
+    </div>
+  </div>
+  <button id="pre-order">前序遍历</button>
+  <button id="middle-order">中序遍历</button>
+  <button id="post-order">后序遍历</button>
+  <input type="text" placeholder="输入遍历的速度，单位为秒" id="speed">
+  <input type="text" placeholder="输入要查找的内容" id="search-key">
+  
+  <div class="add-div-area">
+    <button id="add-node">添加节点</button>
+    <input type="text" placeholder="添加节点的内容" id="node-content">
+  </div>
+  <div class="delete-area">
+    <button id="delete-btn">删除节点</button>
+  </div>
+
+
+  <script src="js/task24.js"></script>
+</body>
+
+</html>
