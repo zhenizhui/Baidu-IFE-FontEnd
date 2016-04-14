@@ -18,6 +18,17 @@
     postOrder(_root);
   });
 
+
+
+  _root.addEventListener("click", function() {
+    select_node(event);
+  })
+
+  delete_btn.addEventListener("click", delete_node);
+
+  add_btn.addEventListener("click", add_node);
+
+
   function preOrder(node) {
     //前序遍历
     if (node != null) {
@@ -77,7 +88,7 @@
     if (key_value == "A") {
       key_value = "root";
     }
-    //console.log("array.length - 1 = "+array.length - 1);
+
     if (!self.islooping) {
       self.islooping = true;
       array[iter].style.border = "1px solid red";
@@ -88,7 +99,13 @@
           if (array[iter].id == key_value) {
             alert("found");
           } else {
-            alert("not found" + key_value);
+            if (key_value == "") {
+              clear_Border_style();
+              return;
+            } else {
+              alert("not found" + key_value);
+            }
+
           }
           array[iter].style.border = "1px solid black"; //#FFEB3B
           self.islooping = false;
@@ -109,6 +126,14 @@
     }
   }
 
+  function clear_Border_style() {
+    root.style.border = "1px solid black";
+    var elements = root.getElementsByTagName("div");
+    for (var i = 0, len = elements.length; i < len; i++) {
+      elements[i].style.border = "1px solid black";
+    }
+  }
+
   //选择节点
   function select_node(event) {
     var ev = event || window.event;
@@ -126,25 +151,17 @@
   }
 
   //增加节点
-  function add_node(){
+  function add_node() {
     if (target === null) {
       alert("请选择节点");
       return;
     }
-    var node_content= document.getElementById("node-content").value;
+    var node_content = document.getElementById("node-content").value;
     var _div = document.createElement("div");
     _div.id = node_content;
     _div.innerHTML = node_content;
     _div.className = "son-3";
     target.appendChild(_div);
   }
-
-  _root.addEventListener("click", function() {
-    select_node(event);
-  })
-
-  delete_btn.addEventListener("click", delete_node);
-
-  add_btn.addEventListener("click", add_node)
 
 })()
