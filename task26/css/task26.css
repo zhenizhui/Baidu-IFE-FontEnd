@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+}
+
+.flight-area {
+  /*飞行区域*/
+  color: #fff;
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 50px;
+}
+
+.flight-area .flight-path-500,
+.flight-area .flight-path-400,
+.flight-area .flight-path-300,
+.flight-area .flight-path-200,
+.flight-area .start {
+  /*飞行轨道*/
+  border: 1px solid #fff;
+  position: relative;
+}
+
+.flight-area .flight-path-500 {
+  height: 500px;
+  width: 500px;
+  border-radius: 500px;
+}
+
+.flight-area .flight-path-400 {
+  height: 400px;
+  width: 400px;
+  border-radius: 400px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.flight-area .flight-path-300 {
+  height: 300px;
+  width: 300px;
+  border-radius: 300px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.flight-area .flight-path-200 {
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.flight-area .start {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  margin-top: 50px;
+  margin-left: 50px;
+  background-color: blue;
+}
+
+.flight-outer{
+	position: absolute;
+	width: 30px;
+	height: 109px;
+	font-size: 12px;
+	text-align: center;
+  top: 50px;
+  left: 50px; 
+}
+
+.flight-outer .flight{
+  position: absolute;
+  background-color: red;
+  width: 30px;
+  height: 15px;
+  bottom: 0;
+}
+
+.control-panel {
+  /*控制台*/
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  color: green;
+  overflow: auto;
+  padding-bottom: 10px;
+}
