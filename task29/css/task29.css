@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-style: "";
+	font-size: 14px;
+}
+
+form{
+	padding: 10px;
+}
+
+.group{
+	
+}
+
+.group .label-name{
+
+}
+
+.group .data-input{
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.group .vertify-btn{
+	padding: 5px;
+	background-color: blue;
+	text-align: center;
+	outline: 0;
+}

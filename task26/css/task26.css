@@ -23,6 +23,7 @@ body {
   /*飞行轨道*/
   border: 1px solid #fff;
   position: relative;
+  box-sizing: border-box;
 }
 
 .flight-area .flight-path-500 {
@@ -64,22 +65,14 @@ body {
   background-color: blue;
 }
 
-.flight-outer{
-	position: absolute;
-	width: 30px;
-	height: 109px;
-	font-size: 12px;
-	text-align: center;
-  top: 50px;
-  left: 50px; 
-}
-
-.flight-outer .flight{
+.flight {
+  height: 50px;
+  width: 50px;
+  background: green;
   position: absolute;
-  background-color: red;
-  width: 30px;
-  height: 15px;
-  bottom: 0;
+  text-align: center;
+  border-radius: 50px;
+  line-height: 50px;
 }
 
 .control-panel {
