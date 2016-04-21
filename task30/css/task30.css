@@ -36,11 +36,11 @@ form {
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  box-shadow: 
+  outline: none;
 }
 
 .group .data-input:focus {
-  outline: 0;
+  border: 1px solid #2D77B8;
   box-shadow: 0 0 10px rgba(164, 205, 241, 1)
 }
 
