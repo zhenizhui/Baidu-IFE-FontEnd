@@ -11,10 +11,48 @@
   <form action="#">
     <div class="group">
       <label for="" class="label-name">名称</label>
-      <input type="text" class="data-input"></input>
-      <button class="vertify-btn">验证</button>
+      <input type="text" class="data-input" id="data-input"></input>
+      <button class="vertify-btn" id="vertify-btn">验证</button>
+      <p class="tips" id="tips">必填，长度为4~16个字符</p>
     </div>
   </form>
+  <script type="text/javascript">
+  /**
+         * 1.字符数为4~16位
+           2.每个英文字母、数字、英文符号长度为1
+           3.每个汉字，中文符号长度为2
+         */
+
+  var vertify_btn = document.getElementById("vertify-btn");
+  var tips = document.getElementById("tips");
+
+  vertify_btn.addEventListener('click', function() {
+    var data = document.getElementById("data-input").value.trim();
+    var data_value_length = getLength(data);//获取内容的长度
+    if (data_value_length >= 4 && data_value_length <= 16) {
+      console.log(data_value_length);
+      tips.className = "correct-tips";
+      tips.innerHTML = "验证正确";
+    } else {
+      console.log(data_value_length);
+      tips.className = "wrong-tips";
+      tips.innerHTML = "输入的内容长度不符合4~16位";
+    }
+  })
+
+  function getLength(str) {
+    var length = 0;
+    for (var i = 0; i < str.length; i++) {
+      var countCode = str.charCodeAt(i);
+      if (countCode >= 0 && countCode <= 128) {
+        length += 1;//每个英文字母、数字、英文符号长度为1
+      } else {
+        length += 2;//每个汉字，中文符号长度为2
+      }
+    }
+    return length;
+  }
+  </script>
 </body>
 
 </html>
