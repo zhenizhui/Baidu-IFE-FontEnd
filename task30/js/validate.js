@@ -5,9 +5,11 @@ var Validate = {
             input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "手机号码输入正确";
+            
         } else {
             input_obj.nextElementSibling.className = "wrong-tips";
             input_obj.nextElementSibling.innerHTML = "手机号码输入错误";
+            
         }
     },
 
@@ -17,9 +19,11 @@ var Validate = {
             input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "邮箱格式正确";
+            
         } else {
             input_obj.nextElementSibling.className = "wrong-tips";
             input_obj.nextElementSibling.innerHTML = "邮箱格式错误";
+            
         }
     },
 
@@ -28,9 +32,11 @@ var Validate = {
             input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "密码格式正确";
+            
         } else {
             input_obj.nextElementSibling.className = "wrong-tips";
             input_obj.nextElementSibling.innerHTML = "密码格式不正确 8~20位";
+            
         }
     },
 
@@ -43,33 +49,30 @@ var Validate = {
             input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "两次密码一致";
+            
         } else {
             input_obj.nextElementSibling.className = "wrong-tips";
             input_obj.nextElementSibling.innerHTML = "两次密码不一致";
+            
         }
-        //如果先输入确认密码，再输入密码，确认密码的提示还是提示密码不一致，虽然这种假设很奇葩
+        
     },
 
     checkName: function(input_obj) {
         if (input_obj.value == "") {
             input_obj.nextElementSibling.className = "wrong-tips";
             input_obj.nextElementSibling.innerHTML = "用户名格式不正确";
+            
         } else {
             input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "用户名格式正确";
+            
         }
     },
 
     submit_form: function() {
-        var p = document.querySelectorAll('.tips'),
-            pArr = [].slice.call(p, 0),
-            isAllPass = pArr.every(function(p) {
-                return p.className === 'correct-tips';
-            });
-        //console.log("p"+p);
-        console.log(isAllPass);
-        isAllPass ? alert('提交成功') : alert('提交失败');
+        
     },
 
     init: function(obj) {
