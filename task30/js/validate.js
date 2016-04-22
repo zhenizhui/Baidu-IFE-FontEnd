@@ -2,6 +2,7 @@ var Validate = {
     checkPhone: function(input_obj) {
         var reg = /^\d{11}$/;
         if (reg.test(input_obj.value)) {
+            input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "手机号码输入正确";
         } else {
@@ -13,6 +14,7 @@ var Validate = {
     checkEmail: function(input_obj) {
         var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; // I will figure it out
         if (reg.test(input_obj.value)) {
+            input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "邮箱格式正确";
         } else {
@@ -23,6 +25,7 @@ var Validate = {
 
     checkPwd: function(input_obj) {
         if (input_obj.value.length >= 8 && input_obj.value.length <= 20) {
+            input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "密码格式正确";
         } else {
@@ -37,6 +40,7 @@ var Validate = {
             input_obj.nextElementSibling.className = "wrong-tips";
             input_obj.nextElementSibling.innerHTML = "密码格式不正确 8~20位";
         } else if (pwd === input_obj.value.trim()) {
+            input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "两次密码一致";
         } else {
@@ -51,9 +55,21 @@ var Validate = {
             input_obj.nextElementSibling.className = "wrong-tips";
             input_obj.nextElementSibling.innerHTML = "用户名格式不正确";
         } else {
+            input_obj.className = "data-input-correct";
             input_obj.nextElementSibling.className = "correct-tips";
             input_obj.nextElementSibling.innerHTML = "用户名格式正确";
         }
+    },
+
+    submit_form: function() {
+        var p = document.querySelectorAll('.tips'),
+            pArr = [].slice.call(p, 0),
+            isAllPass = pArr.every(function(p) {
+                return p.className === 'correct-tips';
+            });
+        //console.log("p"+p);
+        console.log(isAllPass);
+        isAllPass ? alert('提交成功') : alert('提交失败');
     },
 
     init: function(obj) {

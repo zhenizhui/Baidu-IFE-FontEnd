@@ -39,6 +39,14 @@ form {
   outline: none;
 }
 
+.group .data-input-correct{
+  height: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #5FBC49;
+  outline: none;
+}
+
 .group .data-input:focus {
   border: 1px solid #2D77B8;
   box-shadow: 0 0 10px rgba(164, 205, 241, 1)
