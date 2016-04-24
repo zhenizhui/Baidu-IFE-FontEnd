@@ -5,15 +5,18 @@
 
 body {}
 
+.test {
+    font-size: 400px;
+}
+
 .mask {
     background: #0B081D;
-    opacity: 0.75;
-    filter: alpha(opacity=75);
-    height: 1000px;
-    width: 100%;
-    position: absolute;
-    left: 0;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
     z-index: 999;
 }
 
@@ -57,14 +60,10 @@ body {}
     width: 166px;
     height: 221px;
     margin: 30px auto;
-    background: url(../img/gold_cover_166x221.png) no-repeat;
     overflow: hidden;
+    background: url(../img/2_64003.jpg) no-repeat;
 }
 
-.hero-pic-inner {
-    width: 166px;
-    height: 221px;
-}
 
 .hero-get-area .hero-you-get .hero-name {
     text-align: center;

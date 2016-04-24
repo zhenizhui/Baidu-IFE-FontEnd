@@ -8,35 +8,37 @@
 </head>
 
 <body>
-    <button id="show">show</button>
-    <!-- <div id="mask" class="mask"></div>
-    <div class="hero-get-area">
-        <h2 class="hero-title">您的运气不错，采集黄金星辰后发现：</h2>
-        <div class="hero-you-get">
-            <div class="close"><img src="img/close.png" alt="" width="50px" height="50px"></div>
-            <div class="hero-pic"><img src="img/2_64003.jpg" alt="" class="hero-pic-inner"></div>
-            <h3 class="hero-name">皮肤 龙的传人 李青</h3>
-            <div class="operation">
-                <button class="comfirm">确定</button>
-                <button class="share">立即分享</button>
-            </div>
+    <button id="alert-btn">黄金星辰</button>
+    <p class="test">test</p>
+    <p class="test">test</p>
+    <p class="test">test</p>
+<!--     <div id="mask" class="mask"></div>
+<div class="hero-get-area">
+    <h2 class="hero-title">您的运气不错，采集黄金星辰后发现：</h2>
+    <div class="hero-you-get">
+        <div class="close"><img src="img/close.png" alt="" width="50px" height="50px"></div>
+        <div class="hero-pic-outer"><img src="img/2_64003.jpg" alt="">
         </div>
-    </div> -->
+        <h3 class="hero-name">皮肤 龙的传人 李青</h3>
+        <div class="operation">
+            <button class="comfirm">确定</button>
+            <button class="share">立即分享</button>
+        </div>
+    </div>
+</div> -->
     <div class="div-1000-height"></div>
     <script type="text/javascript" src="js/task37.js"></script>
     <script type="text/javascript">
-    var show = document.getElementById('show');
-    show.addEventListener('click', function() {
-        var pop = new Popup();
-        pop.option = {
+    var btn = document.getElementById("alert-btn");
+    btn.onclick = function() {
+        Popup.alert(function(e) {}, {
             type: "黄金星辰",
+            number: "1个",
             pic_src: "img/2_64003.jpg",
             kind: "皮肤 ",
             kind_name: "龙的传人 李青"
-        }
-        pop.render();
-        
-    })
+        })
+    }
     </script>
 </body>
 

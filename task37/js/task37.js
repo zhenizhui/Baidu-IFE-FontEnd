@@ -1,117 +1,104 @@
-var body = document.getElementsByTagName("body")[0];
+;
+(function(window, document) {
 
-function Popup() {
-    this.option = {
-        /**
-         * type--黄金星辰，钻石星辰
-         * pic_src-- 图片路径
-         * kind--皮肤or英雄
-         * kind_name--名字
-         */
-        type: "",
-        pic_src: "",
-        kind: "",
-        kind_name: ""
-    }
-}
+    var Popup = {
 
-Popup.prototype.render = function() {
-    //渲染DOM
-    /*  <div id="mask"></div>
-		    <div class="hero-get-area">
-        		<h2 class="hero-title">您的运气不错，采集黄金星辰后发现：</h2>
-        		<div class="hero-you-get">
-            		<div class="close"><img src="img/close.png" alt="" width="50px" height="50px"></div>
-            		<div class="hero-pic"><img src="img/2_64003.jpg" alt="" class="hero-pic-inner"></div>
-            		<h3 class="hero-name">皮肤 龙的传人 李青</h3>
-            		<div class="operation">
-                		<button class="comfirm">确定</button>
-                		<button class="share">立即分享</button>
-            		</div>
-        		</div>
-    		</div>
-		 */
+        mask: function() {
+            //创建遮罩层
+            var mask_div = document.createElement('div');
+            mask_div.id = "mask";
+            mask_div.className = "mask";
+            document.body.appendChild(mask_div);
+        },
 
-    //创建元素
-    this.mask = document.createElement('div');
-    this.hero_get_area = document.createElement('div');
-    this.h_2 = document.createElement('h2');
-    this.hero_you_get = document.createElement('div');
-    this.close = document.createElement('div');
-    this.close_img = document.createElement('img');
-    this.hero_pic = document.createElement('div');
-    this.hero_pic_img = document.createElement('img');
-    this.h_3 = document.createElement('h3');
-    this.operation = document.createElement('div');
-    this.comfirm_btn = document.createElement('button');
-    this.share_btn = document.createElement('button');
+        create: function(e, p) {
+            //创建需要的元素
+            var component = "";
 
-    //元素添加样式
-    this.mask.className = "mask";
-    this.hero_get_area.id = "hero-get-area";
-    this.hero_get_area.className = "hero-get-area";
-    this.h_2.className = "hero-title";
-    this.hero_you_get.className = "hero-you-get";
-    this.close.className = "close";
-    this.close.id = "close";
-    this.close_img.src = "img/close.png";
-    this.close_img.width = 50;
-    this.close_img.height = 50;
-    this.hero_pic.className = "hero-pic";
-    this.hero_pic_img.width = 166;
-    this.hero_pic_img.height = 221;
-    this.h_3.className = "hero-name";
-    this.operation.className = "operation";
-    this.comfirm_btn.className = "comfirm";
-    this.share_btn.className = "share";
+            component = '<h2 class="hero-title">' + '您的运气不错，采集' + p.params.type + '发现：' + '</h2>' +
+                '<div class="hero-you-get">' +
+                '<div class="close" id="close">' + '<img src="img/close.png" width="50px" height="50px">' + '</div>' +
 
-    //设置给定的参数
-    this.h_2.innerHTML = "您的运气不错，采集" + this.option.type + "后发现：";
-    console.log(this.option.pic_src);
-    this.hero_pic_img.src = this.option.pic_src;
-    this.h_3.innerHTML = this.option.kind + this.option.kind_name;
-    this.comfirm_btn.innerHTML = "确定";
-    this.share_btn.innerHTML = "立即分享";
+                '<div class="hero-pic">' + '<img src="' + p.params.pic_src + '" width="166px" height="221px">' + '</div>' +
 
-    //各个div的包含关系   
-    this.hero_get_area.appendChild(this.h_2);
-    this.hero_get_area.appendChild(this.hero_you_get);
-    this.hero_you_get.appendChild(this.close);
-    this.close.appendChild(this.close_img);
-    this.hero_you_get.appendChild(this.hero_pic);
-    this.hero_pic.appendChild(this.hero_pic_img);
-    this.hero_you_get.appendChild(this.h_3);
-    this.hero_you_get.appendChild(this.operation);
-    this.operation.appendChild(this.comfirm_btn);
-    this.operation.appendChild(this.share_btn);
+                '<h3 class="hero-name">' + p.params.kind + '' + p.params.kind_name + '</h3>' +
+                '<div class="operation">' +
+                '<button class="comfirm" id="comfirm">确定</button>' +
+                '<button class="share" id="share">立即分享</button>' +
+                '</div>' +
+                '</div>';
+            Popup.afterCreate(e, p, component);
+        },
 
-    //最后把这个弹出层加入到body中
-    body.appendChild(this.mask);
-    body.appendChild(this.hero_get_area);
+        afterCreate: function(e, f, comp) {
+            //添加事件和样式
+            var hero_get_area = document.createElement('div');
+            hero_get_area.id = 'hero-get-area';
+            hero_get_area.innerHTML = comp;
+            hero_get_area.className = "hero-get-area";
+            document.body.appendChild(hero_get_area);
 
-}
+            Popup.listen(document.getElementById('close'),'click',function(){
+                Popup.destroy();
+            })
 
-Popup.prototype.close = function() {
-    var that = this;
-    var close = document.getElementById("close");
-    var mask = document.getElementById("mask");
-    var hero_you_get = document.getElementById()
-    if (close) {
-        /*close.addEventListener('click', function() {
-            if (this.mask) {
-                body.removeChild(that.mask);
-                body.removeChild(that.hero_get_area);
-            } else {
-                console.log("fail");
+            Popup.listen(document.getElementById('comfirm'),'click',function(){
+                Popup.destroy();
+            })
+        },
+
+        destroy : function(){
+            //移除弹出层
+            var comfirm_btn = document.getElementById('comfirm');
+            var close_btn = document.getElementById('close');
+            var hero_get_area = document.getElementById('hero-get-area');
+            var mask = document.getElementById('mask');
+            document.body.removeChild(hero_get_area);
+            document.body.removeChild(mask);
+            Popup.stoplistening(close_btn,'click',function(){});
+            Popup.stoplistening(comfirm_btn,'click',function(){})
+        },
+
+        alert: function(e, argu) {
+            /**
+             * Popup.alert(function(){},{
+                type: "黄金星辰",
+                pic_src: "img/2_64003.jpg",
+                kind: "皮肤 ",
+                kind_name: "龙的传人 李青"
+              })
+             */
+            Popup.mask();
+
+            Popup.create(e, {
+                type: "alert",
+                params: argu
+            });
+        },
+
+        listen: function(e, f, g) {
+            if (e.addEventListener) {
+                return e.addEventListener(f, g, false);
+            }
+            if (e.attachEvent) {
+                return e.attachEvent('on' + f, g);
+            }
+            return false;
+        },
+
+        stoplistening: function(e, f, g) {
+            if (e.removeEventListener) {
+                return e.removeEventListener(f, g, false);
             }
 
-        })*/
-        close.onclick = function(){
-        	document.body.removeChild(mask);
-        	document.body.removeChild(hero_you_get);
-        }
-    } else {
-        console.log("no close");
-    }
+            if (e.detachEvent) {
+                return e.detachEvent('on' + f, g);
+            }
 
-}
+            return false;
+        }
+    }
+    
+    this.Popup = Popup;//把封装的好的对象注册到window上
+
+})(window, document);
