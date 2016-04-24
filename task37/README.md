@@ -8,13 +8,15 @@
     + kind_name: "名称"
 
     例如:
-    　　Popup.alert(function(e) {}, {
-    　　　　type: "黄金星辰",
-    　　　　number: "1个",
-    　　　　pic_src: "img/2_64003.jpg",
-    　　　　kind: "皮肤 ",
-    　　　　kind_name: "龙的传人 李青"
-    　　})
+    ```
+        Popup.alert(function(e) {}, {
+            type: "黄金星辰",
+            number: "1个",
+            pic_src: "img/2_64003.jpg",
+            kind: "皮肤 ",
+            kind_name: "龙的传人 李青"
+        })
+    ```
 
 + 功能
     + alert
