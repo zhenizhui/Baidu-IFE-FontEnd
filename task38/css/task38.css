@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.smart-table {
+    font-family: "Lucida Sans Unicode";
+    font-size: 12px;
+    margin: 45px;
+    width: 480px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #69c;
+}
+
+.smart-table th {
+    position: relative;
+    padding: 12px 17px 12px 17px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #039;
+    border-bottom: 1px dashed #69c;
+    background-color: #69c;
+}
+
+.smart-table td {
+    padding: 7px 17px 7px 17px;
+    color: #669;
+}
+
+.smart-table tbody tr:hover td {
+    color: #339;
+    background: #d0dafd;
+}
+
+.smart-table th>span {
+    display: inline-block;
+    width: 9px;
+    height: 15px;
+    background-image: url('../img/arrow.png');
+    position: absolute;
+    right: 9px;
+    top: 14px;
+    cursor: pointer;
+}

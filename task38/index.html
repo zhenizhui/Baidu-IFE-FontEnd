@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task38 UI组件之排序表格</title>
+    <link rel="stylesheet" href="css/task38.css">
+</head>
+
+<body>
+    <table class="smart-table" summary="2007 Major IT Companies' Profit">
+        <thead>
+            <tr>
+                <th scope="col">Company<span></span></th>
+                <th scope="col">Q1<span></span></th>
+                <th scope="col">Q2<span></span></th>
+                <th scope="col">Q3<span></span></th>
+                <th scope="col">Q4<span></span></th>
+                <th scope="col">Sum<span></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Microsoft</td>
+                <td>20.3</td>
+                <td>30.5</td>
+                <td>23.5</td>
+                <td>40.3</td>
+                <td>114.6</td>
+            </tr>
+            <tr>
+                <td>Google</td>
+                <td>50.2</td>
+                <td>40.63</td>
+                <td>45.23</td>
+                <td>39.3</td>
+                <td>144.6</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>25.4</td>
+                <td>30.2</td>
+                <td>33.3</td>
+                <td>36.7</td>
+                <td>14.6</td>
+            </tr>
+            <tr>
+                <td>IBM</td>
+                <td>20.4</td>
+                <td>15.6</td>
+                <td>22.3</td>
+                <td>29.3</td>
+                <td>74.6</td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript" src="js/task38.js"></script>
+    <script type="text/javascript">
+        smartTable.initTable(function(e){},{
+            col:"6",
+            row:"3",
+            data:{
+                th:["Company","Q1","Q2","Q3","Q4","Sum"],
+                td:[
+                    ["Microsoft","20.3","30.5","23.5","40.3","114.6"],
+                    ["Google","50.2","40.63","45.23","39.3","144.6"],
+                    ["Apple","25.4","30.2","33.3","36.7","14.6"]
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
