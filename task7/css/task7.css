@@ -191,7 +191,7 @@ body {
 .search-acvitity {
     text-align: center;
     width: 100%;
-    height: 439px;
+    height: 380px;
     background: url(../img/search_bac.jpg) no-repeat;
     background-size: cover; //背景图片覆盖容器,这玩意导致margin-bottom失效？
     padding-bottom: 20px;
@@ -211,7 +211,7 @@ body {
 }
 
 .acvitity-list {
-        width: 1071px;
+    width: 1071px;
     overflow: auto;
     text-align: center;
     margin: 0 auto;
@@ -233,7 +233,6 @@ body {
     padding: 5px 27px 5px 10px;
     font-family: 微软雅黑;
     color: #aaa;
-
 }
 
 .search {
@@ -247,38 +246,169 @@ body {
     cursor: pointer;
 }
 
-.list{
-	width: 237px;
+.list {
+    width: 237px;
     overflow: auto;
     background-color: #ccc;
 }
 
-.list li{
-	width: 202px;
+.list li {
+    width: 202px;
     height: 30px;
-	background: url(../img/hook.png) top 6px left 5px no-repeat;
-	margin-right: 0;
-	line-height: 30px;
-	text-align: left;
-	padding-left: 32px;
-	font-size: 14px;
-	margin-bottom: 7px;
+    background: url(../img/hook.png) top 6px left 5px no-repeat;
+    margin-right: 0;
+    line-height: 30px;
+    text-align: left;
+    padding-left: 32px;
+    font-size: 14px;
+    margin-bottom: 7px;
 }
 
-.list li:hover{
-	border: 1px solid #BE4E48;
-	background-color: #BE4E48;
-	color: #fff;
+.list li:hover {
+    border: 1px solid #BE4E48;
+    background-color: #BE4E48;
+    color: #fff;
 }
-
-
 
 //各个城市的活动
+.city-activity {}
 
-.activity-pic{
+.city-activity ul {
+    width: 1098px;
+    margin: 0 auto;
+}
+
+.city-pic {
+    width: 223px;
+    height: 411px;
+    display: inline-block;
+    margin-right: 43px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.city-activity ul li {
+    display: inline-block;
+    padding: 15px 10px;
+    background-color: #fff;
+    margin-right: 74px;
+}
+
+.description h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #000;
+    background-color: #EDECEC;
+}
+
+.description p {
+    background-color: #EDECEC;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+}
+
+
+/*新世界 time 查看更多*/
+
+.more {
+    width: 100%;
+    overflow: auto;
+}
+
+
+.more-list-1 {}
+
+.more-list-1 .time {
+    position: relative;
+    background: url(../img/info1_bac_1.jpg) no-repeat;
+    width: 66%;
+    height: 600px;
+    background-size: cover;
+    overflow: auto;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+
+.more-list-1 .time:after {
+    content: '';
+    position: absolute;
+    border-width: 30px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    top: 250px;
+    left: 100%;
+    margin-left: -60px;
+}
+
+.more-list-1 .time .time-area {
+    position: absolute;
+    width: 423px;
+    height: 253px;
+    top: 50%;
+    left: 50%;
+    margin-left: -212px;
+    margin-top: -127px;
+}
+
+.more-list-1 .time h1 {
+    font-size: 150px;
+    height: 150px;
+    line-height: 150px;
+}
+
+.more-list-1 .time h2 {
+    font-size: 36px;
+    height: 31px;
+    font-weight: normal;
+}
+
+.more-list-1 .time p {
+    height: 21px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.box {
+    width: 33%;
+    height: 600px;
+    background-color: #fff;
+}
+
+.more-list-1 .box {
+    float: right;
+}
+
+
+/*.more-list-2 */
+
+.more-list-2 {
+    overflow: auto;
+    margin-top: -4px;
+}
+
+.more-list-2 .box {
+    float: left;
+}
+
+.pic-box {
+    position: relative;
+    background: url(../img/pic08.jpg) no-repeat;
+    background-size: cover;
 
 }
 
-.activity-pic li{
-
+.pic-box:before {
+    content: '';
+    position: absolute;
+    border-width: 30px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    top: 250px;
+    right: 100%;
+    margin-right: -60px;
 }
+
