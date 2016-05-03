@@ -1,0 +1,9 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+div{
+	width: 20px;
+	background-color: #ccc;
+}

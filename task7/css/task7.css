@@ -313,18 +313,18 @@ body {
 
 /*新世界 time 查看更多*/
 
-.more {
+.new-world-show {
     width: 100%;
     overflow: auto;
+    min-width: 1280px;
 }
 
+.new-world-show {}
 
-.more-list-1 {}
-
-.more-list-1 .time {
+.new-world-show .time {
     position: relative;
     background: url(../img/info1_bac_1.jpg) no-repeat;
-    width: 66%;
+    width: 66.67%;
     height: 600px;
     background-size: cover;
     overflow: auto;
@@ -333,7 +333,7 @@ body {
     display: inline-block;
 }
 
-.more-list-1 .time:after {
+.new-world-show .time:after {
     content: '';
     position: absolute;
     border-width: 30px;
@@ -344,7 +344,7 @@ body {
     margin-left: -60px;
 }
 
-.more-list-1 .time .time-area {
+.new-world-show .time .time-area {
     position: absolute;
     width: 423px;
     height: 253px;
@@ -354,54 +354,81 @@ body {
     margin-top: -127px;
 }
 
-.more-list-1 .time h1 {
+.new-world-show .time .time-area h1 {
     font-size: 150px;
     height: 150px;
     line-height: 150px;
 }
 
-.more-list-1 .time h2 {
+.new-world-show .time .time-area h2 {
     font-size: 36px;
     height: 31px;
     font-weight: normal;
 }
 
-.more-list-1 .time p {
+.new-world-show .time .time-area p {
     height: 21px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.box {
-    width: 33%;
+.new-world-show .box {
+    position: relative;
+    width: 33.33%;
     height: 600px;
     background-color: #fff;
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin-left: -6px;
 }
 
-.more-list-1 .box {
-    float: right;
+.new-world-show .box .box-inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -40%;
+    width: 80%;
+    height: 300px;
+}
+
+.new-world-show .box .box-inner h3 {
+    font-weight: normal;
+    margin: 0 auto 20px;
+    font-size: 21px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.new-world-show .box .box-inner hr {
+    width: 30px;
+    margin: 5px auto;
+    border: 1px solid #fff;
+}
+
+.new-world-show .box .box-inner .btn {
+    display: block;
+    margin: 25px auto;
+    padding: 10px 44px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 21px;
+    line-height: 24px;
+    text-align: center;
+    width: 30%;
+}
+
+.new-world-show .box.red {
+    position: relative;
+    background-color: #e74f4d;
 }
 
 
 /*.more-list-2 */
 
-.more-list-2 {
-    overflow: auto;
-    margin-top: -4px;
-}
-
-.more-list-2 .box {
-    float: left;
-}
-
-.pic-box {
-    position: relative;
-    background: url(../img/pic08.jpg) no-repeat;
-    background-size: cover;
-
-}
-
-.pic-box:before {
+.more-list-2 .pic-box:before {
     content: '';
     position: absolute;
     border-width: 30px;
@@ -411,4 +438,3 @@ body {
     right: 100%;
     margin-right: -60px;
 }
-
