@@ -6,6 +6,9 @@
 + 能够基于设计稿来合理规划HTML文档结构
 + 理解语义化，合理地使用HTML标签来构建页面
 
+### 资源
++ [W3C HTML 标签](http://www.w3school.com.cn/tags/index.asp)
 ### 任务示例
  
-![github](/task1/img/pic.png)
+![github](/task1/img/task1-demo.jpg)
+
