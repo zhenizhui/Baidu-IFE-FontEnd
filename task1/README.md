@@ -8,4 +8,4 @@
 
 ### 任务示例
  
-![github](https://github.com/zhenizhui/Baidu-IFE-FontEnd/tree/master/task1/img/pic.png)
+![github](/task1/img/pic.png)
