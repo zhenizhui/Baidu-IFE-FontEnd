@@ -319,7 +319,10 @@ body {
     min-width: 1280px;
 }
 
-.new-world-show {}
+.new-world-show {
+    font-size: 0;
+    /*解决inline-block垂直的边距*/
+}
 
 .new-world-show .time {
     position: relative;
@@ -381,17 +384,19 @@ body {
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
-    margin-left: -6px;
 }
 
-.new-world-show .box .box-inner{
+.new-world-show .box {}
+
+.new-world-show .box .box-inner {
+    width: 400px;
+    height: 178px;
+    margin: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -300px;
-    margin-left: -40%;
-    width: 80%;
-    height: 300px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .new-world-show .box .box-inner h3 {
@@ -400,20 +405,21 @@ body {
     font-size: 21px;
     line-height: 30px;
     text-align: center;
+    color: #000;
 }
 
 .new-world-show .box .box-inner hr {
     width: 30px;
     margin: 5px auto;
-    border: 1px solid #fff;
+    border: 1px solid #ccc;
 }
 
 .new-world-show .box .box-inner .btn {
     display: block;
     margin: 25px auto;
     padding: 10px 44px;
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid #e74f4d;
+    color: #e74f4d;
     font-size: 21px;
     line-height: 24px;
     text-align: center;
@@ -421,14 +427,28 @@ body {
 }
 
 .new-world-show .box.red {
-    position: relative;
     background-color: #e74f4d;
 }
 
+.new-world-show .box.red .box-inner h3 {
+    color: #fff;
+}
 
-/*.more-list-2 */
+.new-world-show .box.red .box-inner hr {
+    border: 1px solid #fff;
+}
 
-.more-list-2 .pic-box:before {
+.new-world-show .box.red .box-inner .btn {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.new-world-show .box.pic-box {
+    background: url(../img/pic08.jpg);
+    background-size: cover;
+}
+
+.new-world-show .box.pic-box:before {
     content: '';
     position: absolute;
     border-width: 30px;
@@ -437,4 +457,168 @@ body {
     top: 250px;
     right: 100%;
     margin-right: -60px;
+}
+
+
+/*volunter志愿者*/
+
+.volunter {
+    padding: 50px 120px;
+    background-color: #fff;
+}
+
+.volunter .volunter-title-h3 {
+    text-align: center;
+    font-weight: normal;
+}
+
+.volunter hr {
+    width: 30px;
+    margin: 10px auto;
+    border: 1px solid #e74f4d;
+    text-align: center;
+}
+
+.volunter .p-1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.volunter-area {
+}
+
+.volunter-area .volunter-detail {
+    width: 39%;
+    font-size: 13px;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+.volunter-area .volunter-detail .detail {
+    overflow: auto;
+}
+
+.volunter-area .volunter-detail .detail h4 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.volunter-area .volunter-detail .detail .more-detail {
+    float: right;
+}
+
+.become-volunter {
+    width: 55%;
+    display: inline-block;
+}
+
+.become-volunter input {
+    display: inline-block;
+    border: none;
+    outline: 0;
+    background: #EDEDEE;
+    padding: 15px 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 40%;
+}
+
+.become-volunter textarea {
+    padding: 20px;
+    background-color: #EDEDEE;
+    border: none;
+    outline: 0;
+    width: 87.5%;
+    margin-top: 20px;
+}
+
+.become-volunter button {
+    background-color: #EDEDEE;
+    border: none;
+    outline: 0;
+    width: 91.8%;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/*footer 底部*/
+
+footer {
+    padding: 100px 100px 30px 100px;
+    background-color: #32353E;
+    color: #fff;
+    text-align: center;
+}
+
+footer h3 {
+    font-weight: normal;
+    width: 100%;
+}
+
+footer p {
+    padding: 20px 100px;
+}
+
+footer .input-info .input-email {
+    height: 15px;
+    width: 30%;
+    padding: 10px;
+    outline: 0;
+    border-width: 1px;
+    border-style: solid;
+    line-height: 15px;
+}
+
+footer .input-info .submit-btn {
+    height: 35px;
+    width: 70px;
+    background: #6F7178;
+    color: #fff;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    line-height: 35px;
+}
+
+footer .contact-us {
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+}
+
+footer .contact-us .ico {
+    display: inline-block;
+    width: 29px;
+    height: 25px;
+    margin-right: 25px;
+}
+
+footer .contact-us .ico.qq {
+    background: url(../img/qq_icon.png) no-repeat;
+}
+
+footer .contact-us .ico.weibo {
+    background: url(../img/weibo_icon.png) no-repeat;
+}
+
+footer .contact-us .ico.twitter {
+    background: url(../img/twiter_icon.png) no-repeat;
+}
+
+footer .contact-us .ico.blog {
+    background: url(../img/blog_icon.png) no-repeat;
+}
+
+.new-world-2016 {
+    float: left;
+    color: #fff;
+}
+
+.back-top {
+    float: right;
+    color: #fff;
 }
