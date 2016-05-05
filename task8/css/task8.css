@@ -1,9 +1,111 @@
-*{
-	margin: 0;
-	padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-div{
-	width: 20px;
-	background-color: #ccc;
+
+/**
+ * ============================== Grid System Start==============================
+ */
+
+.g-container {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin-right: auto;
+    margin-left: auto;
 }
+
+.g-container * {
+    box-sizing: border-box;
+}
+
+.g-row {}
+
+.g-row:before,
+.g-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    background-color: #ccc;
+    padding: 12px;
+    border: 1px solid #999;
+    height: 50px;
+}
+
+.col-md-1 {
+    width: 8.33%;
+}
+
+.col-md-2 {
+    width: 16.66%;
+}
+
+.col-md-3 {
+    width: 24.99%;
+}
+
+.col-md-4 {
+    width: 33.32%;
+}
+
+.col-md-5 {
+    width: 41.66%;
+}
+
+.col-md-6 {
+    width: 49.99%;
+}
+
+.col-md-7 {
+    width: 58.32%;
+}
+
+.col-md-8 {
+    width: 66.66%;
+}
+
+.col-md-9 {
+    width: 74.99%;
+}
+
+.col-md-10 {
+    width: 83.32%;
+}
+
+.col-md-11 {
+    width: 91.66%;
+}
+
+.col-md-12 {
+    width: 100%;
+}
+
+@media (max-width: 769px) {
+    /*max-width大于某个值就会失效
+      min-width小于某个值就会失效*/
+    .col-ms-2 {
+        width: 16.66%;
+    }
+    .col-ms-3 {
+        width: 24.99%;
+    }
+    .col-ms-6 {
+        width: 49.99%;
+    }
+    .col-ms-8 {
+        width: 66.66%;
+    }
+    .col-ms-12 {
+        width: 100%;
+    }
+}
+
+
+/**
+ * ============================== Grid System End==============================
+ */
