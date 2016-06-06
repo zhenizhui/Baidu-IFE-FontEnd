@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-a {
+/* a {
     color: #fff;
     text-decoration: none;
 }
@@ -17,12 +17,12 @@ a:visited{
 }
 
 a:hover{
-	color: #56ABE4;
+    color: #56ABE4;
 }
 
 a:active{
 
-}
+} */
 
 body{
     background-color: #E8E5E5;
