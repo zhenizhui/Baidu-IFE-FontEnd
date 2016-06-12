@@ -10,7 +10,7 @@ a {
 
 body {
     padding: 20px;
-    font: 14px "lucida grande", "lucida sans unicode", lucida, "Helvetica Neue", helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font: 14px "Microsoft YaHei";
 }
 
 .container {
@@ -41,20 +41,14 @@ body {
     
 }
 
-.mainContent:after{
-	content: "";
+/* .mainContent:after{
+    content: "";
     display: block;
     clear: both;
-}
+} */
 
 .personDetail {
     width: 120px;
     float: right;
 }
-
-
-/*
-下面是position的布局方式
-
-*/
 
