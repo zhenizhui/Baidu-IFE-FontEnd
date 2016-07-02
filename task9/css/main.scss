@@ -1,0 +1,165 @@
+body,
+div,
+span,
+ul,
+li,
+nav,
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: Microsoft YaHei;
+}
+
+.be-head {
+    /*页面最顶部*/
+    background-color: #2189bf;
+    height: 50px;
+    width: 100%;
+    padding: 0 60px 0 60px;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    /**/
+    .be-logo {
+        /*页面最顶部 左边部分logo*/
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        position: relative;
+        background-color: #fff;
+        top: 10px;
+    }
+    .be-logo:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        border: 3px solid #2189bf;
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+    }
+    .be-user {
+        float: right;
+        .search {
+            position: relative;
+            float: right;
+            top: 10px;
+            .search-icon {
+                background: url(../img/sprite.png) no-repeat;
+                background-position: left -9px bottom -217px;
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                position: absolute;
+                top: 4px;
+                left: 13px;
+            }
+            .search-input {
+                padding-left: 40px;
+                border-radius: 25px;
+                height: 25px;
+                width: 200px;
+                outline: 0;
+                border: none;
+                @include transition(width .3s);
+                &:focus {
+                    width: 250px;
+                }
+            }
+        }
+        .login {
+            position: relative;
+            float: right;
+            top: 10px;
+            margin-left: 20px;
+            padding-left: 20px;
+            .user-icon {
+                background: url(../img/sprite.png) no-repeat;
+                background-position: left -9px bottom -135px;
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                position: absolute;
+                top: 3px;
+                left: -2px;
+            }
+            .be-login {
+                color: #fff;
+                font-family: Microsoft YaHei;
+                margin-top: 1px;
+                display: inline-block;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+/*顶部End*/
+
+.be-content {
+    position: relative;
+    margin-top: 50px;
+    & .slidebar {
+        width: 260px;
+        height: 100%;
+        background-color: #2a2e3d;
+        padding:25px 47px;
+        overflow: auto;
+        .user-info {
+            width: 100%;
+            position: relative;
+            
+            .user-pic {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                background-color: #ccc;
+            }
+            .user-name {
+                float: right;
+                color: #fff;
+                margin-top: -41px;/*用负值好不好*/
+                margin-right: 35px;
+                font-size: 18px;
+            }
+        }
+
+        .detail{
+            overflow: auto;
+                margin: 20px 0;
+            .collect,.fans{
+                width: 50%;
+                padding: 0 20px;
+                color: #6e8095;
+                font-size: 13px;
+            }
+            .collect{
+                float: left;
+                border-right: 1px solid #666;
+            }
+            .fans{
+                float: right;
+                border-left: 1px solid #666;
+            }
+        }
+    }
+}
