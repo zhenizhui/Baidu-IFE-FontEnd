@@ -14,4 +14,4 @@
 [StackOverflow：Which method of ‘clearfix’ is best?：清除浮动黑科技完整解读](http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best)
 
 ### 任务示例
-![github](https://github.com/zhenizhui/Baidu-IFE-FontEnd/blob/master/task3/img/task3-demo.jpg)
+![task3-demo](https://raw.githubusercontent.com/zhenizhui/Baidu-IFE-FontEnd/master/task3/img/task3-demo.jpg)
