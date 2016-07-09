@@ -1,6 +1,6 @@
 任务描述  http://ife.baidu.com/task/detail?taskId=2
 
-[live demo](http://119.29.96.102/ife-2016/task2/index.html)
+[live demo](http://www.zhenizhui.com/ife-2016/task2/index.html)
 
 ### 任务目的
 + 针对设计稿样式进行合理的HTML架构，包括以下但不限于：

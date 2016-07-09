@@ -1,5 +1,7 @@
 任务详情：http://ife.baidu.com/task/detail?taskId=3
 
+[live demo](http://www.zhenizhui.com/ife-2016/task3/index.html)
+
 ### 任务目的
 + 尝试 position 和 float 的效果，思考它们的异同和应用场景。
 + 注意测试不同情况，尤其是极端情况下的效果。
@@ -12,4 +14,4 @@
 [StackOverflow：Which method of ‘clearfix’ is best?：清除浮动黑科技完整解读](http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best)
 
 ### 任务示例
-![github](/task3/img/task3-demo.jpg)
+![github](https://github.com/zhenizhui/Baidu-IFE-FontEnd/blob/master/task3/img/task3-demo.jpg)
