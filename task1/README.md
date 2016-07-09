@@ -1,6 +1,6 @@
 任务详情：http://ife.baidu.com/task/detail?taskId=1
 
-[live demo](http://119.29.96.102/ife-2016/task1/index.html)
+[live demo](http://www.zhenizhui.com/ife-2016/task1/index.html)
 
 ### 任务目的
 + 了解HTML的定义、概念、发展简史
