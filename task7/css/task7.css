@@ -18,12 +18,9 @@ body {
 }
 
 .head {
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 3px;
+    padding: 10px 50px 3px 50px;
     background-color: #fff;
-    height: 40px;
+    height: 41px;
     overflow: auto;
 }
 
@@ -68,7 +65,6 @@ body {
 .menu li:first-child a,
 .menu li:last-child a {
     color: #E74F4D;
-    /*看一看别人是如何控制链接的颜色的*/
 }
 
 .menu li:hover {
@@ -79,11 +75,10 @@ body {
 .user-ico {
     margin-right: 2px;
     margin-bottom: -3px;
-    /*如何优雅的解决这个user-ico*/
 }
 
 
-/*enjot*/
+/*enjoy*/
 
 .enjoy {
     width: 100%;
@@ -270,7 +265,6 @@ body {
     color: #fff;
 }
 
-//各个城市的活动
 .city-activity {}
 
 .city-activity ul {
@@ -388,6 +382,85 @@ body {
 
 .new-world-show .box {}
 
+.new-world-show .box .wrapper{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    top: 130px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.new-world-show .box .wrapper input[type="radio"] {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    z-index: 10;
+    /*opacity: 0;*/
+    cursor: pointer;
+    margin-right: 1px;
+    margin-left: 2px;
+    left: 2px;
+}
+
+.new-world-show .box .wrapper input[type="radio"]:nth-of-type(1):checked~.radio-list:nth-of-type(1),
+.new-world-show .box .wrapper input[type="radio"]:nth-of-type(2):checked ~ .radio-list:nth-of-type(2),
+.new-world-show .box .wrapper input[type="radio"]:nth-of-type(3):checked ~ .radio-list:nth-of-type(3){
+    background: #999;
+}
+
+.new-world-show .box .wrapper .mes p:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.new-world-show .box .wrapper .mes p.poem-header{
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.new-world-show .box .wrapper .mes p.poem{
+    margin-bottom: 10px;
+}
+.new-world-show .box .wrapper .mes-2,
+.new-world-show .box .wrapper .mes-3{
+    display: none;
+}
+.new-world-show .box .wrapper .button-wrapper{
+    margin-top: 150px
+}
+.new-world-show .box .wrapper .button{
+    width: 100px;
+    height: 35px;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #BE4F48;
+    color: #BE4F48;
+    background-color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.new-world-show .box .wrapper .button:hover{
+    color: #fff;
+    border-radius: 3px;
+    background-color: #BE4F48;
+}
+
+.new-world-show .box .wrapper .radio-list{
+    height: 10px;
+    width: 10px;
+    border: 1px solid #6C5C5C;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    top: -20px;
+}
+
 .new-world-show .box .box-inner {
     width: 400px;
     height: 178px;
@@ -455,7 +528,7 @@ body {
     border-style: solid;
     border-color: transparent transparent transparent #fff;
     top: 250px;
-    right: 100%;
+    right: 101%;
     margin-right: -60px;
 }
 
@@ -529,7 +602,7 @@ body {
     background-color: #EDEDEE;
     border: none;
     outline: 0;
-    width: 87.5%;
+    width: 89.5%;
     margin-top: 20px;
 }
 
@@ -537,11 +610,12 @@ body {
     background-color: #EDEDEE;
     border: none;
     outline: 0;
-    width: 91.8%;
+    width: 95%;
     height: 50px;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 3px;/*特地给firefox和edge增加的，不加的话textarea和button会贴合在一起，原因不明*/
 }
 
 
