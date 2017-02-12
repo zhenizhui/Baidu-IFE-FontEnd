@@ -2,73 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>task38 UI组件之排序表格</title>
-    <link rel="stylesheet" href="css/task38.css">
+  <meta charset="UTF-8">
+  <title>task38 UI组件之排序表格</title>
+  <link rel="stylesheet" href="css/task38.css">
 </head>
 
 <body>
-    <table class="smart-table" summary="2007 Major IT Companies' Profit">
-        <thead>
-            <tr>
-                <th scope="col">Company<span></span></th>
-                <th scope="col">Q1<span></span></th>
-                <th scope="col">Q2<span></span></th>
-                <th scope="col">Q3<span></span></th>
-                <th scope="col">Q4<span></span></th>
-                <th scope="col">Sum<span></span></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Microsoft</td>
-                <td>20.3</td>
-                <td>30.5</td>
-                <td>23.5</td>
-                <td>40.3</td>
-                <td>114.6</td>
-            </tr>
-            <tr>
-                <td>Google</td>
-                <td>50.2</td>
-                <td>40.63</td>
-                <td>45.23</td>
-                <td>39.3</td>
-                <td>144.6</td>
-            </tr>
-            <tr>
-                <td>Apple</td>
-                <td>25.4</td>
-                <td>30.2</td>
-                <td>33.3</td>
-                <td>36.7</td>
-                <td>14.6</td>
-            </tr>
-            <tr>
-                <td>IBM</td>
-                <td>20.4</td>
-                <td>15.6</td>
-                <td>22.3</td>
-                <td>29.3</td>
-                <td>74.6</td>
-            </tr>
-        </tbody>
-    </table>
-    <script type="text/javascript" src="js/task38.js"></script>
-    <script type="text/javascript">
-        smartTable.initTable(function(e){},{
-            col:"6",
-            row:"3",
-            data:{
-                th:["Company","Q1","Q2","Q3","Q4","Sum"],
-                td:[
-                    ["Microsoft","20.3","30.5","23.5","40.3","114.6"],
-                    ["Google","50.2","40.63","45.23","39.3","144.6"],
-                    ["Apple","25.4","30.2","33.3","36.7","14.6"]
-                ]
-            }
-        })
-    </script>
+<table class="smart-table" id="smart-table">
+</table>
+<script type="text/javascript" src="js/task38.js"></script>
+<script type="text/javascript">
+  var data = [
+    {company: 'Microsoft', Q1: '20.3', Q2: '30.5', Q3: '23.5', Q4: '40.3'},
+    {company: 'Google', Q1: '50.2', Q2: '40.63', Q3: '45.23', Q4: '39.3'},
+    {company: 'Apple', Q1: '25.4', Q2: '30.2', Q3: '33.3', Q4: '14.6'},
+    {company: 'IBM', Q1: '20.4', Q2: '15.6', Q3: '22.3', Q4: '29.3'}
+  ];
+
+  var colConfig = [
+    {
+      name: 'company'
+    },
+    {
+      name: 'Q1',
+      sort: 'desc',
+      sortKey: 'Q1'
+    },
+    {
+      name: 'Q2',
+      sort: 'desc',
+      sortKey: 'Q2'
+    },
+    {
+      name: 'Q3',
+      sort: 'desc',
+      sortKey: 'Q3'
+    },
+    {
+      name: 'Q4',
+      sort: 'desc',
+      sortKey: 'Q4',
+      sortCallBack: function () {
+        alert('Q4 sort finish');
+      }
+    }
+  ];
+
+  SmartTable({
+    el: '#smart-table',
+    data: data,
+    col: colConfig,
+    caption: '2007 Major IT Companies Profit'
+  }).initTable();
+</script>
 </body>
 
 </html>
