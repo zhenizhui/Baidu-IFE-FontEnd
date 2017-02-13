@@ -26,7 +26,10 @@
     {
       name: 'Q1',
       sort: 'desc',
-      sortKey: 'Q1'
+      sortKey: 'Q1',
+      sortSuccessCallBack: function () {
+        console.log('Q1 sort back success');
+      }
     },
     {
       name: 'Q2',
@@ -42,10 +45,10 @@
       name: 'Q4',
       sort: 'desc',
       sortKey: 'Q4',
-      sortCallBack: function () {
+      sortSuccessCallBack: function () {
         alert('Q4 sort finish');
       }
-    }
+  }
   ];
 
   SmartTable({
