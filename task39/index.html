@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>task39 UI组件之冻结表格</title>
+  <link rel="stylesheet" href="css/task39.css">
+</head>
+
+<body>
+<table class="smart-table" id="smart-table">
+</table>
+<script type="text/javascript" src="js/task39.js"></script>
+<script type="text/javascript">
+  var data = [
+    {company: 'Microsoft', Q1: '20.3', Q2: '30.5', Q3: '23.5', Q4: '40.3'},
+    {company: 'Google', Q1: '50.2', Q2: '40.63', Q3: '45.23', Q4: '39.3'},
+    {company: 'Apple', Q1: '25.4', Q2: '30.2', Q3: '33.3', Q4: '14.6'},
+    {company: 'IBM', Q1: '20.4', Q2: '15.6', Q3: '22.3', Q4: '29.3'}
+  ];
+
+  var colConfig = [
+    {
+      name: 'company'
+    },
+    {
+      name: 'Q1',
+      sort: 'desc',
+      sortKey: 'Q1',
+      sortSuccessCallBack: function () {
+        console.log('Q1 sort back success');
+      }
+    },
+    {
+      name: 'Q2',
+      sort: 'desc',
+      sortKey: 'Q2'
+    },
+    {
+      name: 'Q3',
+      sort: 'desc',
+      sortKey: 'Q3'
+    },
+    {
+      name: 'Q4',
+      sort: 'desc',
+      sortKey: 'Q4',
+      sortSuccessCallBack: function () {
+        alert('Q4 sort finish');
+      }
+  }
+  ];
+
+  SmartTable({
+    el: '#smart-table',
+    data: data,
+    col: colConfig,
+    caption: '2007 Major IT Companies Profit'
+  }).initTable();
+</script>
+</body>
+
+</html>
