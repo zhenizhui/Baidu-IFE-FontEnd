@@ -1,6 +1,9 @@
 function SmartTable(config) {
   var tableEl = document.querySelector(config.el);
 
+  /**
+   * @description 初始化
+   */
   function initTable() {
     // 判断有无配置参数
     if (!config) {
@@ -40,13 +43,14 @@ function SmartTable(config) {
         if (tableHeaderData[i].sort) {
           var upEl = document.createElement('i');
           var downEl = document.createElement('i');
-          var sortKeyName = tableHeaderData[i].name;
+          var sortKeyName = tableHeaderData[i].sortKey;
           var sortCallBack = tableHeaderData[i].sortSuccessCallBack;
           upEl.setAttribute('class', 'arrow-up');
           downEl.setAttribute('class', 'arrow-down');
           td.textContent = tableHeaderData[i].name;
           td.appendChild(upEl);
           td.appendChild(downEl);
+          td.style.width = tableHeaderData[i].width;
           upEl.addEventListener('click', function () {
             _sort(sortKeyName, 'asc', sortCallBack);
           });
@@ -73,8 +77,16 @@ function SmartTable(config) {
       frag.appendChild(tbodyEl);
     });
     tableEl.appendChild(frag);
+    _addEvent();
   };
 
+  /**
+   * @description 排序
+   * @param sortKey 排序关键字
+   * @param type 升序（asc） 还是 降序（desc）
+   * @param cb callback 回调函数
+   * @private
+   */
   function _sort(sortKey, type, cb) {
     var configData = config.data;
     configData.sort(function (a, b) {
@@ -87,6 +99,30 @@ function SmartTable(config) {
     _createTable(configData);
     if (cb) {
       cb();
+    }
+  };
+
+  /**
+   * @description 添加事件
+   * @private
+   */
+  function _addEvent() {
+    var tableElHeader = document.querySelector('.smart-table thead');
+    if (config.isFrozen) {
+      window.addEventListener('scroll', function () {
+        var bodyScrollTopValue = document.body.scrollTop;
+        var tableElHeight = tableEl.offsetHeight;
+        if (bodyScrollTopValue > tableEl.offsetTop && bodyScrollTopValue < tableEl.offsetTop + tableElHeight) {
+          tableElHeader.style.position = 'fixed';
+          tableElHeader.style.top = '0px';
+          tableElHeader.style.width = '480px';
+          tableElHeader.style.zIndex = '22';
+        } else {
+          tableElHeader.style.position = '';
+          tableElHeader.style.top = '';
+          tableElHeader.style.width = '';
+        }
+      });
     }
   }
 

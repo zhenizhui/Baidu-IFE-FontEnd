@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/task39.css">
 </head>
 
-<body>
+<body style="height: 2000px;">
 <table class="smart-table" id="smart-table">
 </table>
 <script type="text/javascript" src="js/task39.js"></script>
@@ -21,12 +21,14 @@
 
   var colConfig = [
     {
-      name: 'company'
+      name: 'company',
+      width: '81px'
     },
     {
       name: 'Q1',
       sort: 'desc',
       sortKey: 'Q1',
+      width: '81px',
       sortSuccessCallBack: function () {
         console.log('Q1 sort back success');
       }
@@ -34,17 +36,20 @@
     {
       name: 'Q2',
       sort: 'desc',
-      sortKey: 'Q2'
+      sortKey: 'Q2',
+      width: '81px'
     },
     {
       name: 'Q3',
       sort: 'desc',
-      sortKey: 'Q3'
+      sortKey: 'Q3',
+      width: '81px'
     },
     {
       name: 'Q4',
       sort: 'desc',
       sortKey: 'Q4',
+      width: '81px',
       sortSuccessCallBack: function () {
         alert('Q4 sort finish');
       }
@@ -55,7 +60,8 @@
     el: '#smart-table',
     data: data,
     col: colConfig,
-    caption: '2007 Major IT Companies Profit'
+    caption: '2007 Major IT Companies Profit',
+    isFrozen: true
   }).initTable();
 </script>
 </body>
