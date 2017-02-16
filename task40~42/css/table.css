@@ -1,0 +1,52 @@
+*,
+*:after,
+*:before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calendar{
+  display: table;
+  padding: 15px;
+  background: #2E2F2F;
+  color: #fff;
+}
+
+.calendar-header{
+  position: relative;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.calendar-body{
+
+}
+
+.calendar-table{
+
+}
+
+.calendar-table td{
+  padding: 9px;
+  text-align: center;
+  /*border 的颜色与背景色一致*/
+  border: 2px solid #2E2F2F;
+  cursor: pointer;
+}
+
+.calendar-table tbody td:hover{
+  border-color: #ccc;
+}
+
+.calendar-table td.today{
+  background: #0063B1;
+}
+
+.calendar-table td.select-this-day{
+  border-color: #0063B1;
+}
+
+.calendar-table td.not-this-month{
+  color: #808080;
+}
