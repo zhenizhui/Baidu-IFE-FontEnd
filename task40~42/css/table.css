@@ -27,6 +27,10 @@
 
 }
 
+.calendar-header .year-month{
+  cursor: pointer;
+}
+
 .calendar-table td{
   padding: 9px;
   text-align: center;
